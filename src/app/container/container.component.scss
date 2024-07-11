@@ -1,0 +1,182 @@
+.container {
+  margin-top: 110px;
+  padding-bottom: 170px;  
+  width: 100vw;
+  position: relative;
+  overflow: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  .naglowek {
+    padding: 20px;
+    h1 {
+      font-weight: normal;
+    }
+
+    hr {
+      width: 80%;
+    }
+  }
+  
+  content {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90vw;
+    justify-content: space-evenly;
+
+    @media screen and (max-width: 480px) {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .pierwszy {
+      width: 25vw;
+
+      @media screen and (max-width: 960px) {
+        width: 50%;
+      }
+
+      @media screen and (max-width: 480px) {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      h2 {
+        text-align: center;
+
+        @media screen and (max-width: 960px) and (min-width: 481px) {
+          text-align: start;
+        }
+      }
+
+      .wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 200px;
+        font-size: 1.3rem;
+        
+
+        .radio {
+          display: block;
+          position: relative;
+          padding-left: 35px;
+          margin-bottom: 12px;
+          cursor: pointer;
+          font-size: 1.2em;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+
+          .mark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 25px;
+            width: 25px;
+            border: 3px #eee solid;
+            border-radius: 50%;
+          }
+
+          .mark:after {
+            content: "";
+            position: absolute;
+            display: none;
+            border: none;
+            top: 5px;
+            left: 5px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: #eee;
+          }
+
+
+          input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+          }
+        }
+
+        .radio input:checked + .text {
+          font-weight: bold;
+        }
+
+        .radio input:checked ~ .mark:after {
+          display: block;
+        }
+      }
+    }
+
+    .drugi {
+      width: 25vw;
+      text-align: center;
+      @media screen and (max-width: 960px) {
+        width: 50%;
+        text-align: end;
+      }
+
+      @media screen and (max-width: 480px) {
+        text-align: center;
+      }
+  
+      
+      .wrapper {
+        height: 200px;
+        display: flex;
+        align-items: center;
+        @media screen and (max-width: 1690px) {
+          flex-direction: column;
+        }
+        @media screen and (max-width: 960px) and (min-width: 481px) {
+          align-items: flex-end;
+        }
+        
+        justify-content: space-around;
+
+        button {
+          width: 200px;
+          transition: 250ms ease-in-out;
+        }
+
+        button:hover {
+          background: rgb(255,104,104);
+          background: linear-gradient(90deg, rgba(255,104,104,1) 0%, rgba(252,176,69,1) 97%);
+        }
+      }
+    }
+
+    .trzeci {
+      width: 25vw;
+      @media screen and (max-width: 960px) {
+        width: 100%;
+      }
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      h2 {
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        
+
+        text-align: center;
+      }
+
+      .wrapper {
+        color: #9FA4B1;
+        text-align: center;
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
